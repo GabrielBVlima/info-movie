@@ -8,7 +8,6 @@ const MovieCard = ({ movie, showLink = true }) => {
         <div className="movie_card">
             <img src={imageURL + movie.poster_path} alt={movie.title} />
             <h2>{movie.title}</h2>
-            <p>Genero</p>
             <p>
                 <FaStar /> {movie.vote_average}
             </p>
