@@ -2,8 +2,9 @@
     color: #fff;
     display: flex;
     flex-direction: column;
-    max-width: 600px;
     margin: 2rem auto;
+    padding: 2rem;
+    max-width: 1200px;
 }
 
 .movie_page svg {
@@ -26,6 +27,11 @@
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
+}
+
+.row_one {
+    display: flex;
+    gap: 40px;
 }
 
 .tagline {
@@ -52,4 +58,42 @@
 .description p {
     line-height: 1.4rem;
     text-align: justify;
+}
+
+.desktop_view {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.header {
+    text-align: center;
+}
+
+.header h2 {
+    margin-bottom: 20px;
+}
+
+.movie_page .movie_card img {
+    width: 300px;
+}
+
+@media (max-width: 580px) {
+    .movie_page {
+        padding: 0.8rem;
+    }
+
+    .movie_page .movie_card img {
+        width: 290px;
+        margin: 0;
+    }
+
+    .row_one {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row_two {
+        margin-top: -26px;
+    }
 }

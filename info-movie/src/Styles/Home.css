@@ -58,3 +58,21 @@
     background-color: transparent;
     color: #b10000;
 }
+
+@media (max-width: 700px) {
+    .movies_container div {
+        width: 30%;
+    }
+}
+
+@media (max-width: 550px) {
+    .movies_container div {
+        width: 45%;
+    }
+}
+
+@media (max-width: 450px) {
+    .movies_container div {
+        width: 100%;
+    }
+}

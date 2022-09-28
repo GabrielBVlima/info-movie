@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import MovieCard from "../Components/MovieCard";
 
-import "../Styles/Movies.css";
+import "../Styles/Home.css";
 
 const apiURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
