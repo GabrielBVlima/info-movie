@@ -1,0 +1,7 @@
+.buttons_search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: -20px 0 50px 0;
+}

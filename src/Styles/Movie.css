@@ -31,12 +31,14 @@
 
 .row_one {
     display: flex;
+    width: 100%;
+    justify-content: space-around;
     gap: 40px;
 }
 
 .tagline {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-bottom: 2rem;
 }
 
@@ -71,14 +73,27 @@
 }
 
 .header h2 {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .movie_page .movie_card img {
     width: 300px;
 }
 
-@media (max-width: 580px) {
+.info_division {
+    display: flex;
+    gap: 50px;
+}
+
+.column_two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 786px) {
     .movie_page {
         padding: 0.8rem;
     }
@@ -95,5 +110,18 @@
 
     .row_two {
         margin-top: -26px;
+    }
+
+    .info_division {
+        margin: 20px 0 20px 0;
+    }
+}
+
+@media (max-width: 424px) {
+    .info_division {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin: 20px 0 20px 0;
     }
 }

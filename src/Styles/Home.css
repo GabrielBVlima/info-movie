@@ -42,6 +42,41 @@
     color: #f7d354;
 }
 
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0 10px 0;
+}
+
+.buttons_down {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0 10px 0;
+    margin: -20px 0 50px 0;
+}
+
+.back_and_next {
+    align-items: center;
+    background-color: #b10000;
+    color: #fff;
+    border: 2px solid #b10000;
+    border-radius: 4px;
+    padding: 0.5rem 0.5rem;
+    transition: 0.6s;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.back_and_next:hover {
+    background-color: transparent;
+    color: #b10000;
+}
+
 .movies_container div a {
     align-items: center;
     background-color: #b10000;
@@ -59,7 +94,7 @@
     color: #b10000;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 825px) {
     .movies_container div {
         width: 30%;
     }
