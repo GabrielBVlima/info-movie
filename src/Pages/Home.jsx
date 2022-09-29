@@ -47,7 +47,7 @@ const Home = () => {
                     Página Anterior
                 </button>
                 <button className="back_and_next" onClick={nextPage}>
-                    Proxima Pagina
+                    Proxima Página
                 </button>
             </div>
 

@@ -54,7 +54,7 @@ const Search = () => {
                     Página Anterior
                 </button>
                 <button className="back_and_next" onClick={nextPage}>
-                    Proxima Pagina
+                    Proxima Página
                 </button>
             </div>
             <div className="movies_container">
