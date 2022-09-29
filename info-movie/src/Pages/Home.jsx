@@ -18,14 +18,14 @@ const Home = () => {
     };
 
     useEffect(() => {
-        const topRateUrl = `${apiURL}top_rated?api_key=d5374514382de89b141edb0534d0843b&language=pt-BR`;
+        const topRateUrl = `${apiURL}top_rated?${apiKey}&language=pt-BR`;
 
         getTopMovies(topRateUrl);
     }, []);
 
     return (
         <div className="container">
-            <h2 className="title">Os Filmes Mais Bem Avaliados:</h2>
+            <h2 className="title">Os Filmes Mais Bem Avaliados</h2>
             <div className="movies_container">
                 {topMovies.length === 0 && <p>Carregando, por favor aguarde...</p>}
                 {topMovies.length > 0 &&
