@@ -28,7 +28,7 @@ const Movie = () => {
     };
 
     useEffect(() => {
-        const movieUrl = `${apiURL}${id}?${apiKey}&language=pt-BR`;
+        const movieUrl = `${apiURL}${id}?api_key=d5374514382de89b141edb0534d0843b&language=pt-BR`;
         getMovie(movieUrl);
     }, []);
 
