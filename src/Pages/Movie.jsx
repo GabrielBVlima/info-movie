@@ -69,7 +69,8 @@ const Movie = () => {
                                             <FaStar /> Genero:
                                         </h3>
                                         <p>
-                                            {movie.genres[0].name} / {movie.genres[1].name}
+                                            {movie.genres &&
+                                                movie.genres.map((g) => `${g.name} / `)}
                                         </p>
                                     </div>
                                     <div className="info">
