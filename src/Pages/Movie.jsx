@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { BsGraphUp, BsWallet2, BsHourglassSplit, BsFillFileEarmarkTextFill } from "react-icons/bs";
+import { useParams, useNavigate } from "react-router-dom";
+import {
+    BsGraphUp,
+    BsWallet2,
+    BsHourglassSplit,
+    BsFillFileEarmarkTextFill,
+    BsCalendarCheckFill,
+    BsCameraReelsFill,
+} from "react-icons/bs";
 import "../Styles/Movie.css";
 import { FaStar } from "react-icons/fa";
-import MovieCard from "../Components/MovieCard";
 
 const apiURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -13,6 +19,9 @@ const Movie = () => {
     const { id } = useParams();
     const [genres, setGenres] = useState([]);
     const [movie, setMovie] = useState(null);
+    const [url, setUrl] = useState("");
+
+    const navigate = useNavigate();
 
     const getMovie = async (url) => {
         const res = await fetch(url);
@@ -37,7 +46,9 @@ const Movie = () => {
         setGenres(data.genres);
     };
 
-    console.log(genres);
+    const returnUrl = () => {
+        navigate(-1);
+    };
 
     useEffect(() => {
         const movieUrl = `${apiURL}${id}?${apiKey}&language=pt-BR`;
@@ -51,6 +62,9 @@ const Movie = () => {
         <div className="movie_page">
             {movie && (
                 <div className="desktop_view">
+                    <button className="return" onClick={returnUrl}>
+                        Voltar
+                    </button>
                     <div className="row_one">
                         <div className="column_one">
                             <div className="movie_card">
@@ -66,7 +80,7 @@ const Movie = () => {
                                 <div className="column_info_one">
                                     <div className="info">
                                         <h3>
-                                            <FaStar /> Genero:
+                                            <BsCameraReelsFill /> Genero:
                                         </h3>
                                         <p>
                                             {movie.genres &&
@@ -81,7 +95,7 @@ const Movie = () => {
                                     </div>
                                     <div className="info">
                                         <h3>
-                                            <BsWallet2 /> Lançamento:
+                                            <BsCalendarCheckFill /> Lançamento:
                                         </h3>
                                         <p>
                                             {formatCurrency(

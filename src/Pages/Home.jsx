@@ -15,26 +15,30 @@ const Home = () => {
         const res = await fetch(url);
         const data = await res.json();
 
+        console.log(res);
+
         setTopMovies(data.results);
         setTotalPages(data.total_pages);
     };
 
     const nextPage = () => {
-        for (let i = 1; i < totalPages; i++) {
+        console.log(count, totalPages);
+        if (count < totalPages) {
             setCount(count + 1);
         }
-        console.log(count);
     };
 
     const backPage = () => {
-        for (let i = count; i > 1; i--) {
+        if (count > 1) {
             setCount(count - 1);
         }
-        console.log(count);
     };
 
     useEffect(() => {
         const topRateUrl = `${apiURL}top_rated?${apiKey}&language=pt-BR&page=${count}`;
+
+        localStorage.clear();
+        localStorage.setItem("ultimaUrl", topRateUrl);
 
         getTopMovies(topRateUrl);
     }, [count]);

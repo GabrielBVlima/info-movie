@@ -20,26 +20,26 @@ const Search = () => {
 
         setMovies(data.results);
         setTotalPages(data.total_pages);
-
-        console.log(data.total_pages);
     };
 
     const nextPage = () => {
-        for (let i = 1; i < totalPages; i++) {
+        console.log(count, totalPages);
+        if (count < totalPages) {
             setCount(count + 1);
         }
-        console.log(count);
     };
 
     const backPage = () => {
-        for (let i = count; i > 1; i--) {
+        if (count > 1) {
             setCount(count - 1);
         }
-        console.log(count);
     };
 
     useEffect(() => {
         const searchWithQueryURL = `${apiSearchURL}?${apiKey}&query=${query}&language=pt-BR&page=${count}`;
+
+        localStorage.clear();
+        localStorage.setItem("ultimaUrl", searchWithQueryURL);
 
         getSearchedMovies(searchWithQueryURL);
     }, [query, count]);
@@ -58,7 +58,7 @@ const Search = () => {
                 </button>
             </div>
             <div className="movies_container">
-                {movies.length === 0 && <p>Carregando, aguarde...</p>}
+                {movies.length === 0 && <p>Nenhum filme encontrado...</p>}
                 {movies.length > 0 &&
                     movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
             </div>
