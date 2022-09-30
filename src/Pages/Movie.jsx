@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {
     BsGraphUp,
     BsWallet2,
@@ -19,9 +19,6 @@ const Movie = () => {
     const { id } = useParams();
     const [genres, setGenres] = useState([]);
     const [movie, setMovie] = useState(null);
-    const [url, setUrl] = useState("");
-
-    const navigate = useNavigate();
 
     const getMovie = async (url) => {
         const res = await fetch(url);
@@ -29,8 +26,6 @@ const Movie = () => {
 
         setMovie(data);
     };
-
-    console.log(movie);
 
     const formatCurrency = (number) => {
         return number.toLocaleString("en-US", {
@@ -46,10 +41,6 @@ const Movie = () => {
         setGenres(data.genres);
     };
 
-    const returnUrl = () => {
-        navigate(-1);
-    };
-
     useEffect(() => {
         const movieUrl = `${apiURL}${id}?${apiKey}&language=pt-BR`;
         const genres = `https://api.themoviedb.org/3/genre/movie/list?${apiKey}&language=pt-BR`;
@@ -62,9 +53,6 @@ const Movie = () => {
         <div className="movie_page">
             {movie && (
                 <div className="desktop_view">
-                    <button className="return" onClick={returnUrl}>
-                        Voltar
-                    </button>
                     <div className="row_one">
                         <div className="column_one">
                             <div className="movie_card">

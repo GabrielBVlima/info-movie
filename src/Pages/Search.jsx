@@ -23,7 +23,6 @@ const Search = () => {
     };
 
     const nextPage = () => {
-        console.log(count, totalPages);
         if (count < totalPages) {
             setCount(count + 1);
         }

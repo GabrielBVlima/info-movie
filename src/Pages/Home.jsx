@@ -15,14 +15,11 @@ const Home = () => {
         const res = await fetch(url);
         const data = await res.json();
 
-        console.log(res);
-
         setTopMovies(data.results);
         setTotalPages(data.total_pages);
     };
 
     const nextPage = () => {
-        console.log(count, totalPages);
         if (count < totalPages) {
             setCount(count + 1);
         }
